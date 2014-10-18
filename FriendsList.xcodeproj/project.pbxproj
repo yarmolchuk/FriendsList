@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320334F519F2A4E300249D2B /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320334F419F2A4E300249D2B /* FriendTableViewCell.swift */; };
 		326B767D19F26FE20010D639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B767C19F26FE20010D639 /* AppDelegate.swift */; };
 		326B768019F26FE20010D639 /* FriendsList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 326B767E19F26FE20010D639 /* FriendsList.xcdatamodeld */; };
 		326B768219F26FE20010D639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B768119F26FE20010D639 /* ViewController.swift */; };
 		326B768519F26FE20010D639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326B768319F26FE20010D639 /* Main.storyboard */; };
 		326B768719F26FE20010D639 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326B768619F26FE20010D639 /* Images.xcassets */; };
 		326B768A19F26FE20010D639 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 326B768819F26FE20010D639 /* LaunchScreen.xib */; };
+		329D822B19F2ABEB002AC8B2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D822A19F2ABEB002AC8B2 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		320334F419F2A4E300249D2B /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		326B767719F26FE20010D639 /* FriendsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326B767B19F26FE20010D639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		326B767C19F26FE20010D639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		326B768419F26FE20010D639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		326B768619F26FE20010D639 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		326B768919F26FE20010D639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		329D822A19F2ABEB002AC8B2 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = "CoreData Models/Person.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320334F319F2A4CD00249D2B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				320334F419F2A4E300249D2B /* FriendTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		326B766E19F26FE20010D639 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +68,8 @@
 		326B767919F26FE20010D639 /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
+				329D822919F2ABAE002AC8B2 /* CoreData models */,
+				320334F319F2A4CD00249D2B /* Cell */,
 				326B767C19F26FE20010D639 /* AppDelegate.swift */,
 				326B768119F26FE20010D639 /* ViewController.swift */,
 				326B768319F26FE20010D639 /* Main.storyboard */,
@@ -73,6 +87,14 @@
 				326B767B19F26FE20010D639 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		329D822919F2ABAE002AC8B2 /* CoreData models */ = {
+			isa = PBXGroup;
+			children = (
+				329D822A19F2ABEB002AC8B2 /* Person.swift */,
+			);
+			name = "CoreData models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329D822B19F2ABEB002AC8B2 /* Person.swift in Sources */,
 				326B768219F26FE20010D639 /* ViewController.swift in Sources */,
 				326B767D19F26FE20010D639 /* AppDelegate.swift in Sources */,
 				326B768019F26FE20010D639 /* FriendsList.xcdatamodeld in Sources */,
+				320334F519F2A4E300249D2B /* FriendTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +313,7 @@
 				326B769B19F26FE20010D639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
