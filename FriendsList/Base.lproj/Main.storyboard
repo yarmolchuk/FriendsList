@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DYr-iO-Ubw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FriendsList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,85 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-2f-rAc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="elP-D6-n2Y"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="kYZ-pf-1pE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="wqi-2f-rAc" secondAttribute="bottom" id="JSd-ry-aGR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wqi-2f-rAc" secondAttribute="trailing" id="QeH-eN-9fL">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
+                            </constraint>
+                            <constraint firstItem="wqi-2f-rAc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="krm-eV-pLE">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
+                            </constraint>
+                            <constraint firstItem="wqi-2f-rAc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="lF8-Ca-0EV">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-64"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wqi-2f-rAc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="QeH-eN-9fL"/>
+                                <exclude reference="krm-eV-pLE"/>
+                                <exclude reference="lF8-Ca-0EV"/>
+                                <exclude reference="JSd-ry-aGR"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="wqi-2f-rAc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="QeH-eN-9fL"/>
+                                <include reference="krm-eV-pLE"/>
+                                <include reference="lF8-Ca-0EV"/>
+                                <include reference="JSd-ry-aGR"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="UcI-hr-2oZ">
+                        <barButtonItem key="rightBarButtonItem" title="Add friend" id="vw4-nV-6n6">
+                            <connections>
+                                <action selector="actAddFriend:" destination="vXZ-lx-hvc" id="lUr-Ae-v2d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addFriendBtn" destination="vw4-nV-6n6" id="umd-hf-Fco"/>
+                        <outlet property="friendsTableView" destination="wqi-2f-rAc" id="pxj-gt-Wax"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="72" y="793.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pxs-A5-vbX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DYr-iO-Ubw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b8p-b2-iPl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="IPV-ZU-7tH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ViZ-Og-1AL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-762" y="793.5"/>
         </scene>
     </scenes>
 </document>
